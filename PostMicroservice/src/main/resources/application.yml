@@ -1,0 +1,30 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: post-microservice
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8762/eureka/
+
+
+#eureka:      This is the top-level key indicating that the configuration is related to Eureka.
+#client:      This specifies that the application is acting as a Eureka client.
+#service-url: This is a sub-key specifying the service URLs.
+#defaultZone: This is where you set the URL of the Eureka server. In this case, the Eureka
+#             server is expected to be running at http://localhost:8761/eureka/. The defaultZone
+#             property is a comma-separated list of service URLs, and you can provide multiple
+#             Eureka server URLs if you have a cluster of Eureka servers.
+
+
+#This configuration tells Eureka client in your Spring Boot application to register with the
+#Eureka server running at http://localhost:8761/eureka/ & to fetch the registry info from there.
+#In a broader context, when your Spring Boot application is running with this configuration, it
+#will register itself with the Eureka server so that other services can discover and communicate
+#with it. Additionally, your application can discover other services registered with the same
+#Eureka server, enabling seamless communication between microservices in a distributed system.
+#Make sure that your Eureka server is running at the specified URL (http://localhost:8761/eureka/)
+#when your Eureka client application starts.
